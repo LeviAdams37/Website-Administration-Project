@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Courses - ClassConnect</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <img src="download.png" alt="ClassConnect Logo">
+      <h1>ClassConnect</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="courses.html" class="active">Courses</a></li>
+        <li><a href="groups.html">Groups</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Enter Your Course Code</h2>
+    <p>Join your class group by entering your unique course code below.</p>
+    <input type="text" id="courseCode" placeholder="Enter course code">
+    <button onclick="joinCourse()">Join Course</button>
+  </main>
+
+  <script>
+    function joinCourse() {
+      const code = document.getElementById('courseCode').value;
+      if (code.trim() === '') {
+        alert('Please enter a valid course code.');
+      } else {
+        alert(`You joined course: ${code}`);
+      }
+    }
+  </script>
+</body>
+</html>

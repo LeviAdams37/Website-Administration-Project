@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ClassConnect - Home</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <img src="download.png" alt="ClassConnect Logo">
+      <h1>ClassConnect</h1>
+    </div>
+
+    <nav>
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="groups.html">Groups</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+
+    <div class="auth-buttons">
+      <a id="loginBtn">Login</a>
+      <a id="createBtn">Create Account</a>
+    </div>
+  </header>
+
+  <main>
+    <h2>Welcome to ClassConnect</h2>
+    <p>Connecting students and staff across any course.</p>
+  </main>
+
+  <!-- Popups -->
+  <div id="overlay"></div>
+
+  <div id="loginPopup" class="popup">
+    <h3>Login</h3>
+    <input type="text" id="loginUsername" placeholder="Username">
+    <input type="password" id="loginPassword" placeholder="Password">
+    <button onclick="login()">Login</button>
+    <button class="close-btn" onclick="closePopup()">Close</button>
+  </div>
+
+  <div id="createPopup" class="popup">
+    <h3>Create Account</h3>
+    <input type="text" id="createUsername" placeholder="Username">
+    <input type="password" id="createPassword" placeholder="Password">
+    <button onclick="createAccount()">Create</button>
+    <button class="close-btn" onclick="closePopup()">Close</button>
+  </div>
+
+  <script>
+    document.getElementById("loginBtn").addEventListener("click", () => openPopup("loginPopup"));
+    document.getElementById("createBtn").addEventListener("click", () => openPopup("createPopup"));
+
+    function openPopup(id) {
+      document.getElementById(id).style.display = "block";
+      document.getElementById("overlay").style.display = "block";
+    }
+
+    function closePopup() {
+      document.querySelectorAll(".popup").forEach(p => p.style.display = "none");
+      document.getElementById("overlay").style.display = "none";
+    }
+
+    function createAccount() {
+      const username = document.getElementById("createUsername").value;
+      const password = document.getElementById("createPassword").value;
+      if (!username || !password) {
+        alert("Please fill out both fields.");
+        return;
+      }
+      if (localStorage.getItem(username)) {
+        alert("Username already exists!");
+        return;
+      }
+      localStorage.setItem(username, password);
+      alert("Account created successfully!");
+      closePopup();
+    }
+
+    function login() {
+      const username = document.getElementById("loginUsername").value;
+      const password = document.getElementById("loginPassword").value;
+      const storedPassword = localStorage.getItem(username);
+      if (storedPassword === password) {
+        alert(`Welcome back, ${username}!`);
+        closePopup();
+      } else {
+        alert("Invalid username or password.");
+      }
+    }
+  </script>
+</body>
+</html>

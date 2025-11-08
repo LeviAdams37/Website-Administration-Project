@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ClassConnect</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <img src="download.png" alt="ClassConnect Logo" />
+      <h1>ClassConnect</h1>
+    </div>
+
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="groups.html">Groups</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+
+    <div class="auth-buttons">
+      <a id="loginBtn">Login</a>
+      <a id="createBtn">Create Account</a>
+    </div>
+  </header>
+
+  <main>
+    <h2>Welcome to ClassConnect</h2>
+    <p>Connecting students and staff across any course.</p>
+  </main>
+
+  <div id="overlay"></div>
+
+  <div id="loginPopup" class="popup">
+    <h3>Login</h3>
+    <input type="text" id="loginUsername" placeholder="Username" />
+    <input type="password" id="loginPassword" placeholder="Password" />
+    <button onclick="login()">Login</button>
+    <button class="close-btn" onclick="closePopup()">Close</button>
+  </div>
+
+  <div id="createPopup" class="popup">
+    <h3>Create Account</h3>
+    <input type="text" id="createUsername" placeholder="Username" />
+    <input type="password" id="createPassword" placeholder="Password" />
+    <button onclick="createAccount()">Create</button>
+    <button class="close-btn" onclick="closePopup()">Close</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
