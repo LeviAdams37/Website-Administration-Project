@@ -49,7 +49,6 @@ nav a.active {
   color: green;
 }
 
-/* Auth buttons */
 .auth-buttons a {
   text-decoration: none;
   color: white;
@@ -65,7 +64,6 @@ nav a.active {
   background-color: darkgreen;
 }
 
-/* Main section */
 main {
   text-align: center;
   padding: 100px 20px;
@@ -83,7 +81,6 @@ main p {
   margin: 15px auto;
 }
 
-/* Popup styling */
 .popup {
   display: none;
   position: fixed;
@@ -125,7 +122,6 @@ main p {
   margin-left: 10px;
 }
 
-/* Overlay */
 #overlay {
   display: none;
   position: fixed;
@@ -137,7 +133,6 @@ main p {
   z-index: 5;
 }
 
-/* Groups page layout */
 .container {
   display: flex;
   padding: 30px;
@@ -183,7 +178,6 @@ main p {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Courses page form */
 .course-form {
   text-align: center;
   margin-top: 100px;
@@ -209,4 +203,5 @@ main p {
 .course-form button:hover {
   background-color: darkgreen;
 }
+
 
