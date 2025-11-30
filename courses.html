@@ -22,12 +22,47 @@
     </nav>
   </header>
 
-  <main>
-    <h2>Enter Your Course Code</h2>
-    <p>Join your class group by entering your unique course code below.</p>
+<main>
+  <h2>Enter Your Course Code</h2>
+  <p>Join your class group by entering your unique course code below.</p>
+
+  <div class="join-course-area">
     <input type="text" id="courseCode" placeholder="Enter course code">
     <button onclick="joinCourse()">Join Course</button>
-  </main>
+    <p id="courseMessage" class="course-message"></p>
+  </div>
+
+  <section id="joinedCoursesSection">
+    <h3>Joined Courses</h3>
+    <div id="joinedCoursesList">
+      <p>You haven't joined any courses yet.</p>
+    </div>
+  </section>
+
+  <section id="courseDetailSection" style="display:none;">
+    <h3 id="courseTitle"></h3>
+
+    <div id="postsContainer">
+      <h4>Posts</h4>
+      <div id="postsList">
+        <p>No posts yet. Be the first to share something!</p>
+      </div>
+    </div>
+
+    <div id="newPostContainer">
+      <h4>Add a new post</h4>
+      <form id="newPostForm">
+        <textarea
+          id="newPostText"
+          rows="3"
+          placeholder="Share something with the class..."
+          required
+        ></textarea>
+        <button type="submit">Post</button>
+      </form>
+    </div>
+  </section>
+</main>
 
   <script>
     function joinCourse() {
@@ -41,4 +76,5 @@
   </script>
 </body>
 </html>
+
 
