@@ -11,7 +11,7 @@ CREATE TABLE usergroups (
     group_name VARCHAR(50) UNIQUE NOT NULL
 );
 
-CREATE TABLE groups (
+CREATE TABLE group_s (
     subject_id VARCHAR(50) PRIMARY KEY,
 	Class_Name VARCHAR(50) UNIQUE NOT NULL,
     class_id VARCHAR(50) UNIQUE NOT NULL,
