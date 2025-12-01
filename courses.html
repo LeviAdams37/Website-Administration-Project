@@ -22,34 +22,55 @@
     </nav>
   </header>
 
-<main>
-  <h2>Enter Your Course Code</h2>
-  <p>Join your class group by entering your unique course code below.</p>
+<main class="courses-page">
+  <!-- Search section -->
+  <section class="course-search">
+    <h2>Find Your Course</h2>
+    <p>Search by course code or course name, then join the class from the results.</p>
 
-  <div class="join-course-area">
-    <input type="text" id="courseCode" placeholder="Enter course code">
-    <button onclick="joinCourse()">Join Course</button>
-    <p id="courseMessage" class="course-message"></p>
-  </div>
-
-  <section id="joinedCoursesSection">
-    <h3>Joined Courses</h3>
-    <div id="joinedCoursesList">
-      <p>You haven't joined any courses yet.</p>
+    <div class="search-row">
+      <input
+        type="text"
+        id="courseSearchInput"
+        placeholder="e.g. CIS 350, Data Structures"
+      >
+      <button id="courseSearchButton">Search</button>
     </div>
+    <p id="searchMessage" class="course-message"></p>
   </section>
 
-  <section id="courseDetailSection" style="display:none;">
-    <h3 id="courseTitle"></h3>
+  <!-- Layout: results + joined + detail -->
+  <section class="courses-layout">
+    <!-- Left: search results -->
+    <div class="courses-column">
+      <h3>Search Results</h3>
+      <div id="searchResults">
+        <p>Type a search above to see available courses.</p>
+      </div>
+    </div>
 
-    <div id="postsContainer">
+    <!-- Middle: joined courses -->
+    <div class="courses-column">
+      <h3>Joined Courses</h3>
+      <div id="joinedCourses">
+        <p>You haven't joined any courses yet.</p>
+      </div>
+    </div>
+
+    <!-- Right: selected course detail + posts -->
+    <div class="courses-column" id="courseDetailSection" style="display:none;">
+      <h3 id="courseTitle"></h3>
+      <p id="courseMeta"></p>
+      <button id="joinCourseButton" type="button">Join Course</button>
+      <p id="joinStatus" class="course-message"></p>
+
+      <hr>
+
       <h4>Posts</h4>
       <div id="postsList">
         <p>No posts yet. Be the first to share something!</p>
       </div>
-    </div>
 
-    <div id="newPostContainer">
       <h4>Add a new post</h4>
       <form id="newPostForm">
         <textarea
@@ -76,5 +97,6 @@
   </script>
 </body>
 </html>
+
 
 
